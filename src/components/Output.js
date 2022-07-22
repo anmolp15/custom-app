@@ -7,7 +7,7 @@ export default function Output({ deletePerson }) {
     const list = useContext(Context);
     return (
         <div className='outer'>
-            <h1>Output Component</h1>
+            <h1>List Component</h1>
             <ul>
                 {list.map((eachPerson, index) => {
                     let fullName = '';
@@ -21,7 +21,9 @@ export default function Output({ deletePerson }) {
                         fullName = `Ms. ${eachPerson.fName} ${eachPerson.lName}`
                     }
                     return (<span key={`${{ fullName }}-${index}`}>
-                        <li key={fullName}>{fullName} <button className='delete-person' onClick={() => deletePerson(index)}>X</button></li>
+                        <li>
+                            <div className='full-name-div'>{fullName} <button className='delete-person' onClick={() => deletePerson(index)}>X</button></div>
+                        </li>
 
                     </span>);
                 })}

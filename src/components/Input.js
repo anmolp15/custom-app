@@ -8,8 +8,8 @@ export default function Input({ addPerson }) {
 
     const haldleSubmit = (e) => {
         e.preventDefault();
-        if (fName.length < 1 || lName.length < 1) {
-            window.alert('Both First and last name are required!')
+        if (fName.length < 1) {
+            window.alert('First is required!')
             return;
         }
         const person = {
